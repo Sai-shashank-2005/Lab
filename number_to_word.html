@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Number to Words</title>
+</head>
+
+<body>
+
+<script>
+
+function convert_number_to_words(number) {
+
+    let hyphen = '-';
+    let conjunction = ' and ';
+    
+    let dictionary = {
+        0 : 'zero',
+        1 : 'one',
+        2 : 'two',
+        3 : 'three',
+        4 : 'four',
+        5 : 'five',
+        6 : 'six',
+        7 : 'seven',
+        8 : 'eight',
+        9 : 'nine',
+        10 : 'ten',
+        11 : 'eleven',
+        12 : 'twelve',
+        13 : 'thirteen',
+        14 : 'fourteen',
+        15 : 'fifteen',
+        16 : 'sixteen',
+        17 : 'seventeen',
+        18 : 'eighteen',
+        19 : 'nineteen',
+        20 : 'twenty',
+        30 : 'thirty',
+        40 : 'forty',
+        50 : 'fifty',
+        60 : 'sixty',
+        70 : 'seventy',
+        80 : 'eighty',
+        90 : 'ninety',
+        100 : 'hundred'
+    };
+
+    if (number < 0 || number > 999) {
+        alert("Enter a number between 0 and 999");
+        return "";
+    }
+
+    let string = "";
+
+    switch (true) {
+
+        case (number < 21):
+            string = dictionary[number];
+            break;
+
+        case (number < 100):
+            let tens = Math.floor(number / 10) * 10;
+            let units = number % 10;
+            string = dictionary[tens];
+            if (units) {
+                string += hyphen + dictionary[units];
+            }
+            break;
+
+        case (number < 1000):
+            let hundreds = Math.floor(number / 100);
+            let remainder = number % 100;
+            string = dictionary[hundreds] + ' ' + dictionary[100];
+            if (remainder) {
+                string += conjunction + convert_number_to_words(remainder);
+            }
+            break;
+
+        default:
+            break;
+    }
+
+    return string;
+}
+
+let a = prompt("Enter a number");
+let num = parseInt(a);
+
+document.write(convert_number_to_words(num));
+
+</script>
+
+</body>
+</html>
