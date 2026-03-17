@@ -1,0 +1,100 @@
+<html>
+
+<head>
+<title>Payroll System</title>
+
+<style>
+body, p {
+  font-family: arial;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.container {
+  width: 500px;
+  margin: auto;
+}
+
+.container input {
+  width: 100%;
+  margin-top: 5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h3>Payroll System</h3>
+
+Employee's Name
+<input type="text" id="emp_name">
+
+<br><br>
+
+Designation
+<input list="des" id="design"/>
+<datalist id="des">
+  <option value="MD">
+  <option value="HR">
+  <option value="TL">
+  <option value="TM">
+</datalist>
+
+<br><br>
+
+Number of Days Worked
+<input type="number" id="no_days_work">
+
+<br><br>
+
+<button onclick="solve_salary()">Solve Salary</button>
+
+<br><br>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+</div>
+
+<script>
+
+function solve_salary() {
+
+  let emp_name = document.getElementById("emp_name").value;
+  let desig = document.getElementById("design").value;
+  let no_days_work = parseInt(document.getElementById("no_days_work").value);
+
+  if (!emp_name || !desig || isNaN(no_days_work)) {
+    alert("Please fill all fields correctly!");
+    return;
+  }
+
+  let gross_pay = 0;
+
+  if (desig === "MD")
+    gross_pay = 2350 * no_days_work;
+  else if (desig === "HR")
+    gross_pay = 1400 * no_days_work;
+  else if (desig === "TL")
+    gross_pay = 700 * no_days_work;
+  else if (desig === "TM")
+    gross_pay = 300 * no_days_work;
+  else {
+    alert("Invalid Designation!");
+    return;
+  }
+
+  let results = "Employee's Name: " + emp_name;
+  let results2 = "Salary of the current Month: ₹ " + gross_pay.toFixed(2);
+
+  document.getElementById("demo").innerHTML = results;
+  document.getElementById("demo2").innerHTML = results2;
+}
+
+</script>
+
+</body>
+</html>
