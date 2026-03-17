@@ -1,100 +1,49 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>Result System</title>
 
-<style>
-body {
-  margin: 60px 200px;
-  background-color: grey;
-  color: beige;
-  font-weight: bold;
-  font-family: Lucida;
-  text-align: center;
-}
-</style>
-
 <script>
+function calc() {
+    let p1 = Number(document.getElementById("p1").value);
+    let p2 = Number(document.getElementById("p2").value);
+    let p3 = Number(document.getElementById("p3").value);
+    let p4 = Number(document.getElementById("p4").value);
+    let p5 = Number(document.getElementById("p5").value);
+    let p6 = Number(document.getElementById("p6").value);
 
-function Calc() {
+    let total = p1 + p2 + p3 + p4 + p5 + p6;
+    let avg = total / 6;
 
-  let a1 = parseFloat(document.getElementById('p1').value);
-  let a2 = parseFloat(document.getElementById('p2').value);
-  let a3 = parseFloat(document.getElementById('p3').value);
-  let a4 = parseFloat(document.getElementById('p4').value);
-  let a5 = parseFloat(document.getElementById('p5').value);
-  let a6 = parseFloat(document.getElementById('p6').value);
+    document.getElementById("total").value = total;
+    document.getElementById("avg").value = avg;
 
-  if (isNaN(a1) || isNaN(a2) || isNaN(a3) || isNaN(a4) || isNaN(a5) || isNaN(a6)) {
-    alert("Please enter all marks!");
-    return;
-  }
-
-  let total = a1 + a2 + a3 + a4 + a5 + a6;
-  let average = total / 6;
-
-  let check = prompt("Shall it continue? (yes/no)");
-
-  if (check && check.toLowerCase() === "yes") {
-
-    document.getElementById('totM').value = total;
-    document.getElementById('avgM').value = average.toFixed(2);
-
-    if (average > 60) {
-      document.getElementById('res').value = "Pass";
+    if (avg >= 60) {
+        document.getElementById("result").value = "Pass";
     } else {
-      document.getElementById('res').value = "Fail";
+        document.getElementById("result").value = "Fail";
     }
-
-  } else {
-    alert("Cancelled");
-  }
 }
-
 </script>
 
 </head>
 
 <body>
 
-<form>
+<h2>Result Evaluation System</h2>
 
-<h1>Welcome to the Result Evaluation System</h1>
+P1: <input id="p1" type="number"><br>
+P2: <input id="p2" type="number"><br>
+P3: <input id="p3" type="number"><br>
+P4: <input id="p4" type="number"><br>
+P5: <input id="p5" type="number"><br>
+P6: <input id="p6" type="number"><br><br>
 
-Enter the Details of the student:<br/><br/>
+<button onclick="calc()">Submit</button><br><br>
 
-Course:
-<input list="course" id="good"/>
-<datalist id="course">
-  <option value="Mtech">
-  <option value="MCA">
-</datalist>
-<br/>
-
-Regno.: <input id="regno" type="text"><br/>
-Name: <input id="sname" type="text"><br/><br/>
-
-Enter the Subject Marks:<br/>
-
-P1 = <input id="p1" type="number"><br/>
-P2 = <input id="p2" type="number"><br/>
-P3 = <input id="p3" type="number"><br/>
-P4 = <input id="p4" type="number"><br/>
-P5 = <input id="p5" type="number"><br/>
-P6 = <input id="p6" type="number"><br/><br/>
-
-<input type="button" onclick="Calc()" value="Submit">
-<input type="button" onclick="window.print()" value="Print">
-
-<br/><br/>
-
-TOTAL MARKS: <input id="totM" type="number"><br/>
-PERCENTAGE %: <input id="avgM" type="number"><br/><br/>
-
-Result: <input id="res" type="text"><br/>
-
-</form>
+Total: <input id="total"><br>
+Average: <input id="avg"><br>
+Result: <input id="result"><br>
 
 </body>
 </html>
