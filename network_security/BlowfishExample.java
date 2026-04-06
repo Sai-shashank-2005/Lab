@@ -1,25 +1,23 @@
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
 import java.util.Base64;
-
-public class BlowfishExample {
-    public static void main(String[] args) {
-
-        String key = "mysecretkey";
-        String plaintext = "Hello, World!";
-
-        StringBuilder ciphertext = new StringBuilder();
-        for (int i = 0; i < plaintext.length(); i++) {
-            ciphertext.append((char) (plaintext.charAt(i) ^ key.charAt(i % key.length())));
-        }
-
-        String encodedCiphertext = Base64.getEncoder().encodeToString(ciphertext.toString().getBytes());
-        System.out.println("Ciphertext: " + encodedCiphertext);
-
-        StringBuilder decryptedText = new StringBuilder();
-        byte[] decodedCiphertext = Base64.getDecoder().decode(encodedCiphertext);
-        for (int i = 0; i < decodedCiphertext.length; i++) {
-            decryptedText.append((char) (decodedCiphertext[i] ^ key.charAt(i % key.length())));
-        }
-
-        System.out.println("Decrypted: " + decryptedText.toString());
-    }
+public class Main {
+	public static void main(String[] args) {
+		try {
+			KeyGenerator keyGenerator = KeyGenerator.getInstance("Blowfish");
+			keyGenerator.init(128);
+			SecretKey secretKey = keyGenerator.generateKey();
+			String plaintext = "Hello, World!";
+			System.out.println("Original Text: " + plaintext);
+			Cipher cipher = Cipher.getInstance("Blowfish");
+			cipher.init(Cipher.ENCRYPT_MODE,
+			            secretKey);
+			byte[] encryptedBytes = cipher.doFinal(plaintext.getBytes());
+			String encryptedText = Base64.getEncoder().encodeToString(encryptedBytes);
+			System.out.println("Encrypted Text: " + encryptedText);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
