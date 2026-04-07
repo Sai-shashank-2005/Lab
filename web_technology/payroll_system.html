@@ -1,61 +1,58 @@
-
+<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Payroll System</title>
+  <title>Payroll</title>
 </head>
 
 <body>
 
-<h3>Payroll System</h3>
+<h3>Payroll</h3>
 
-Employee Name:
-<input type="text" id="name"><br><br>
+Name:
+<input type="text" id="n"><br><br>
 
-Designation:
-<input list="roles" id="role">
-<datalist id="roles">
+Role:
+<input list="r" id="d">
+<datalist id="r">
   <option value="MD">
   <option value="HR">
   <option value="TL">
   <option value="TM">
 </datalist><br><br>
 
-Days Worked:
-<input type="number" id="days"><br><br>
+Days:
+<input type="number" id="dy"><br><br>
 
-<button onclick="calc()">Calculate</button>
+<button onclick="c()">Calc</button>
 
-<p id="result"></p>
+<p id="o"></p>
 
 <script>
-function calc() {
+function c() {
 
-  let name = document.getElementById("name").value;
-  let role = document.getElementById("role").value;
-  let days = parseInt(document.getElementById("days").value);
+  var n = document.getElementById("n").value;
+  var d = document.getElementById("d").value;
+  var dy = document.getElementById("dy").value;
 
-  if (!name || !role || isNaN(days)) {
-    alert("Fill all fields!");
+  if (n=="" || d=="" || dy=="") {
+    alert("Fill all");
     return;
   }
 
-  let pay = {
-    MD: 2350,
-    HR: 1400,
-    TL: 700,
-    TM: 300
-  };
+  var s = 0;
 
-  if (!pay[role]) {
-    alert("Invalid role!");
+  if (d=="MD") s = 2350 * dy;
+  else if (d=="HR") s = 1400 * dy;
+  else if (d=="TL") s = 700 * dy;
+  else if (d=="TM") s = 300 * dy;
+  else {
+    alert("Wrong role");
     return;
   }
 
-  let salary = pay[role] * days;
-
-  document.getElementById("result").innerHTML =
-    "Name: " + name + "<br>Salary: ₹ " + salary;
+  document.getElementById("o").innerHTML =
+    "Name: " + n + "<br>Salary: ₹ " + s;
 }
 </script>
 
