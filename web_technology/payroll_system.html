@@ -1,99 +1,62 @@
+
 <html>
 
 <head>
-<title>Payroll System</title>
-
-<style>
-body, p {
-  font-family: arial;
-  font-size: 16px;
-  font-weight: bolder;
-}
-
-.container {
-  width: 500px;
-  margin: auto;
-}
-
-.container input {
-  width: 100%;
-  margin-top: 5px;
-}
-</style>
-
+  <title>Payroll System</title>
 </head>
 
 <body>
 
-<div class="container">
-
 <h3>Payroll System</h3>
 
-Employee's Name
-<input type="text" id="emp_name">
+Employee Name:
+<input type="text" id="name"><br><br>
 
-<br><br>
-
-Designation
-<input list="des" id="design"/>
-<datalist id="des">
+Designation:
+<input list="roles" id="role">
+<datalist id="roles">
   <option value="MD">
   <option value="HR">
   <option value="TL">
   <option value="TM">
-</datalist>
+</datalist><br><br>
 
-<br><br>
+Days Worked:
+<input type="number" id="days"><br><br>
 
-Number of Days Worked
-<input type="number" id="no_days_work">
+<button onclick="calc()">Calculate</button>
 
-<br><br>
-
-<button onclick="solve_salary()">Solve Salary</button>
-
-<br><br>
-
-<p id="demo"></p>
-<p id="demo2"></p>
-
-</div>
+<p id="result"></p>
 
 <script>
+function calc() {
 
-function solve_salary() {
+  let name = document.getElementById("name").value;
+  let role = document.getElementById("role").value;
+  let days = parseInt(document.getElementById("days").value);
 
-  let emp_name = document.getElementById("emp_name").value;
-  let desig = document.getElementById("design").value;
-  let no_days_work = parseInt(document.getElementById("no_days_work").value);
-
-  if (!emp_name || !desig || isNaN(no_days_work)) {
-    alert("Please fill all fields correctly!");
+  if (!name || !role || isNaN(days)) {
+    alert("Fill all fields!");
     return;
   }
 
-  let gross_pay = 0;
+  let pay = {
+    MD: 2350,
+    HR: 1400,
+    TL: 700,
+    TM: 300
+  };
 
-  if (desig === "MD")
-    gross_pay = 2350 * no_days_work;
-  else if (desig === "HR")
-    gross_pay = 1400 * no_days_work;
-  else if (desig === "TL")
-    gross_pay = 700 * no_days_work;
-  else if (desig === "TM")
-    gross_pay = 300 * no_days_work;
-  else {
-    alert("Invalid Designation!");
+  if (!pay[role]) {
+    alert("Invalid role!");
     return;
   }
 
-  let results = "Employee's Name: " + emp_name;
-  let results2 = "Salary of the current Month: ₹ " + gross_pay.toFixed(2);
+  let salary = pay[role] * days;
 
-  document.getElementById("demo").innerHTML = results;
-  document.getElementById("demo2").innerHTML = results2;
+  document.getElementById("result").innerHTML =
+    "Name: " + name + "<br>Salary: ₹ " + salary;
 }
-
 </script>
 
 </body>
