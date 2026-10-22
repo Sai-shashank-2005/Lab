@@ -1,0 +1,24 @@
+CREATE TABLE student (
+    id INT PRIMARY KEY,
+    name VARCHAR(30),
+    mark INT
+);
+
+-- Insert records
+INSERT INTO student VALUES (1, 'Ravi', 85);
+INSERT INTO student VALUES (2, 'Priya', 90);
+
+-- Read records
+SELECT * FROM student;
+
+-- Update a record
+UPDATE student
+SET mark = 95
+WHERE id = 1;
+
+-- Delete a record
+DELETE FROM student
+WHERE id = 2;
+
+-- Display final records
+SELECT * FROM student;
