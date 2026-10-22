@@ -1,160 +1,196 @@
-# 🧪 Academic Lab Portfolio: Security, Web Technologies & Open Source
+# 🧪 Academic Laboratory Portfolio
+### 🔐 Network Security · 🌐 Web Technologies · 💻 Open Source Programming
 
-![Language](https://img.shields.io/badge/Language-Java%20%7C%20JavaScript%20%7C%20PHP%20%7C%20Bash-blue.svg)
-![Domain](https://img.shields.io/badge/Domain-Cryptography%20%7C%20Web%20Development%20%7C%20Open%20Source-orange.svg)
-![Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20MySQL-E34F26?logo=html5&logoColor=white)
-![License](https://img.shields.io/badge/License-GPL--3.0-red.svg)
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-Programming-orange?logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/JavaScript-Web%20Development-yellow?logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/PHP-Server--Side%20Programming-777BB4?logo=php&logoColor=white" alt="PHP" />
+  <img src="https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Linux-Shell%20Scripting-FCC624?logo=linux&logoColor=black" alt="Linux" />
+</p>
 
-## 📖 Overview
+---
 
-This repository serves as a practical portfolio of academic laboratory programs covering **Network Security, Web Technologies, Open Source Programming, and Shell Scripting**.
+## 📖 About This Repository
 
-It contains implementations of cryptographic algorithms, interactive frontend applications, server-side PHP programs, database connectivity, and Linux shell utilities. The repository is intended for academic learning, laboratory practice, and practical examination preparation.
+Welcome to my **Academic Laboratory Portfolio**, a collection of practical programming exercises completed as part of computer science laboratory coursework.
 
-## 🔐 Module 1: Network Security & Cryptography
+This repository brings together implementations across **network security, cryptography, web development, server-side programming, database connectivity, and shell scripting**.
 
-This module explores foundational cryptographic algorithms using Java and the `javax.crypto` library.
+The objective is to strengthen programming fundamentals through practical implementation, understand the underlying concepts, and maintain a structured reference for laboratory work and practical examination preparation.
 
-| Algorithm / File | Description |
-|---|---|
-| **AES Encryption** — `AESEncryption.java` | Demonstrates symmetric encryption and decryption using the Advanced Encryption Standard (AES), with Base64 encoding for ciphertext representation. |
-| **Blowfish Cipher** — `BlowfishExample.java` | Implements the Blowfish symmetric block cipher with a variable-length key. |
-| **DES Encryption** — `DESEncryption.java` | Demonstrates the legacy Data Encryption Standard (DES) for educational study of symmetric-key encryption. |
-| **Caesar Cipher** — `Caesar_Cipher.java` | Implements a substitution cipher using modular arithmetic to shift alphabetic characters by a specified key. |
+## 📚 Laboratory Modules
 
-## 🌐 Module 2: Web Technologies
+### 🔐 01. Network Security & Cryptography
 
-This module focuses on HTML page design, CSS styling, JavaScript logic, DOM interaction, and structured data presentation.
+*Language: Java | Focus: Cryptographic algorithms*
 
-| Project / File | Description |
-|---|---|
-| **Payroll Calculator** — `payroll_system.html` | Calculates employee salaries according to organizational roles and days worked. |
-| **Result Evaluation** — `result_system.html` | Accepts student marks, calculates totals and averages, and determines pass/fail status. |
-| **Number to Words** — `number_to_word.html` | Converts numbers from 0 to 999 into their English word equivalents using JavaScript. |
-| **Column Spanning** — `colspan.html` | Demonstrates HTML tables using the `colspan` attribute to merge columns. |
-| **Row Spanning** — `rowspan.html` | Demonstrates the `rowspan` attribute to merge rows in structured tables. |
-| **Newspaper Layout** — `newspaper.html` | Explores typography, text formatting, and newspaper-style page layouts. |
-
-## 🐘 Module 3: Open Source Programming
-
-This module covers server-side web development, database operations, and shell scripting using open-source technologies.
-
-### PHP Programming
+This module explores classical and symmetric-key cryptographic techniques through practical implementations.
 
 | Program | Description |
 |---|---|
-| **Student Mark Evaluation** | Accepts student details and marks through an HTML form, calculates the total and grade, and displays the results in a table using PHP. |
-| **Shopping Cart** | Adds selected products to a shopping cart and demonstrates basic cart management. |
-| **MySQL Data Access** | Connects PHP to a MySQL database and retrieves records from a database table. |
+| 🔒 AES Encryption | Demonstrates symmetric encryption and decryption using the Advanced Encryption Standard (AES). |
+| 🛡️ Blowfish Cipher | Explores the Blowfish symmetric-key block cipher. |
+| 🔑 DES Encryption | Demonstrates the Data Encryption Standard (DES) for educational study. |
+| 🔤 Caesar Cipher | Implements character substitution using a fixed alphabetic shift. |
 
-### Shell Scripting
+**Key concepts:** Encryption, decryption, substitution ciphers, symmetric-key cryptography, and Java cryptographic APIs.
+
+### 🌐 02. Web Technologies
+
+*Technologies: HTML5, CSS3, JavaScript | Focus: Frontend development*
+
+This module covers web page structure, styling, browser-based logic, and dynamic presentation of information.
 
 | Program | Description |
 |---|---|
-| **User Session Details** | Displays information about logged-in users and their sessions using Linux commands. |
-| **Shell Utilities** | Demonstrates basic shell programming, command execution, and system information retrieval. |
+| 💰 Payroll Calculator | Calculates employee salary based on role and days worked. |
+| 🎓 Student Result Evaluation | Processes student marks and calculates totals, averages, and pass/fail status. |
+| 🔢 Number to Words | Converts numbers from 0 to 999 into their English word equivalents. |
+| 📊 Column Spanning | Demonstrates HTML table formatting using the `colspan` attribute. |
+| 📋 Row Spanning | Demonstrates HTML table formatting using the `rowspan` attribute. |
+| 📰 Newspaper Layout | Explores typography, text formatting, and structured page layouts. |
 
-> **Note:** The PHP, MySQL, and shell program descriptions represent the intended practical exercises. Keep only the entries that correspond to files actually present in the repository, and update filenames as needed.
+**Key concepts:** HTML elements, CSS styling, JavaScript functions, DOM interaction, form inputs, and tabular data presentation.
 
-## 🛠️ Technologies Used
+### 💻 03. Open Source Programming
 
-- **Programming Languages:** Java, JavaScript, PHP, Bash
-- **Web Technologies:** HTML5, CSS3
-- **Database:** MySQL
-- **Cryptography:** Java Cryptography Architecture (`javax.crypto`)
-- **Operating System:** Linux
-- **Tools:** JDK, PHP runtime, MySQL server, terminal, and web browser
-- **Version Control:** Git and GitHub
+*Technologies: PHP, MySQL, Bash | Focus: Server-side development and Linux utilities*
 
-## 🚀 Execution & Usage
+This module explores server-side processing, database operations, and command-line programming using open-source technologies.
 
-### 1. Network Security — Java
+#### 🐘 PHP Programming
 
-Install a Java Development Kit (JDK), then navigate to the directory containing the Java source files.
+| Program | Description |
+|---|---|
+| 🎓 Student Mark Evaluation | Accepts student details and marks, calculates totals and grades, and displays results in a table. |
+| 🛒 Shopping Cart | Demonstrates adding selected products to a shopping cart. |
+| 🗄️ MySQL Data Access | Connects PHP to a MySQL database and retrieves records from a table. |
+
+#### 🐧 Shell Scripting
+
+| Program | Description |
+|---|---|
+| 👤 User Session Information | Displays logged-in user and session information using Linux commands. |
+| ⚙️ Shell Utilities | Demonstrates basic shell programming, command execution, and system information retrieval. |
+
+> **Note:** The descriptions above represent the planned laboratory exercises. Refer to the actual source files for available implementations and update the documentation as the repository evolves.
+
+---
+
+## 🧰 Technology Stack
+
+| Category | Technologies |
+|---|---|
+| 👨‍💻 Programming languages | Java, JavaScript, PHP, Bash |
+| 🎨 Web technologies | HTML5, CSS3 |
+| 🗃️ Database | MySQL |
+| 🔐 Cryptographic APIs | Java Cryptography Architecture (`javax.crypto`) |
+| 🐧 Operating environment | Linux |
+| 🌱 Version control | Git, GitHub |
+
+## 🚀 Getting Started
+
+### ☕ 1. Java Programs
+
+Install a compatible Java Development Kit (JDK). Navigate to the directory containing the source file, then compile and execute it.
 
 ```bash
 javac AESEncryption.java
 java AESEncryption
 ```
 
-Replace `AESEncryption` with the appropriate filename and class name to execute another algorithm.
+Replace the filename and class name with those of the program you want to run.
 
-### 2. Web Technologies — HTML, CSS & JavaScript
+### 🌍 2. Web Programs
 
-No server is required for the standalone frontend programs.
+Open the required HTML file in a modern web browser.
 
-1. Navigate to the directory containing the HTML files.
-2. Open the required `.html` file in a browser.
-3. Enter the requested values and test the application's functionality.
+Examples:
 
-### 3. Open Source — PHP
+- `payroll_system.html`
+- `result_system.html`
+- `number_to_word.html`
 
-Install PHP and, if required, configure a local web server such as Apache.
+Standalone frontend programs can run directly in the browser when they do not require server-side functionality.
 
-Check the PHP installation:
+### 🐘 3. PHP Programs
+
+Install PHP and verify the installation:
 
 ```bash
 php -v
 ```
 
-For PHP programs that do not require database or server-specific functionality, start PHP's development server from the project directory:
+Navigate to the project directory and start PHP's development server:
 
 ```bash
 php -S localhost:8000
 ```
 
-Open the relevant page at `http://localhost:8000/`.
+Open the following address in your browser:
 
-### 4. PHP & MySQL Integration
+**http://localhost:8000/**
 
-For programs that access MySQL:
+### 🗄️ 4. PHP and MySQL Integration
+
+For database-dependent programs:
 
 1. Install and start a MySQL server.
 2. Create the required database and tables.
-3. Configure the database connection in the PHP program.
-4. Start the PHP development server or use Apache.
-5. Open the PHP page in your browser and test the operations.
+3. Configure the database connection in the PHP source file.
+4. Start the PHP server or configure Apache.
+5. Open the application in your browser and test its functionality.
 
-**Important:** Use appropriate database credentials and avoid committing passwords or other secrets to GitHub.
+🔒 **Security note:** Never commit database passwords, API keys, or other sensitive credentials to a public repository.
 
-### 5. Shell Programming
+### 🐧 5. Shell Scripts
 
-Navigate to the directory containing the shell scripts.
+Execute a shell script using Bash:
+
+```bash
+bash script.sh
+```
+
+Alternatively, make it executable and run it directly:
 
 ```bash
 chmod +x script.sh
 ./script.sh
 ```
 
-Alternatively, execute a script directly through Bash:
+Replace `script.sh` with the actual script filename.
 
-```bash
-bash script.sh
-```
+---
 
-Replace `script.sh` with the actual shell script filename.
+## 🎯 Learning Outcomes
 
-## 📚 Learning Objectives
+Through these laboratory exercises, the intended learning outcomes include:
 
-This repository demonstrates practical understanding of:
+- 🔐 Understanding foundational cryptographic algorithms and their implementations.
+- 🌐 Developing interactive web pages using HTML, CSS, and JavaScript.
+- 💻 Implementing server-side functionality using PHP.
+- 🗄️ Connecting applications to relational databases using MySQL.
+- 🐧 Writing shell scripts for basic Linux command-line tasks.
+- 🧪 Compiling, executing, testing, and documenting programs.
+- 🌱 Maintaining source code using Git and GitHub.
 
-- Fundamental cryptographic algorithms and encryption concepts.
-- HTML page structuring, CSS styling, and JavaScript programming.
-- Server-side processing using PHP.
-- Database connectivity and data retrieval using MySQL.
-- Shell scripting and Linux command-line utilities.
-- Git-based version control and open-source collaboration.
+## ⚠️ Academic & Security Disclaimer
 
-## ⚠️ Academic Disclaimer
+This repository is intended for **educational purposes, academic laboratory practice, and practical examination preparation**.
 
-The programs in this repository are intended for educational purposes and academic laboratory practice.
+The examples may omit production-level error handling, security controls, and performance considerations. DES is obsolete for protecting sensitive information and is included only for educational study. Cryptographic implementations should not be used in production without appropriate algorithms, secure modes of operation, proper key management, and implementation review.
 
-The cryptographic examples demonstrate algorithmic concepts and may use simplified implementations. DES is obsolete for protecting sensitive data, and encryption examples should not be considered production-ready without appropriate modes of operation, secure key management, and other safeguards.
-
-Always test programs in a controlled environment and follow secure coding practices when adapting them for real applications.
+Always test programs in a controlled environment and follow secure coding practices when adapting them for real-world use.
 
 ## ⚖️ License
 
-This repository is distributed under the **GNU General Public License v3.0 (GPL-3.0)**, provided that the repository's `LICENSE` file contains the corresponding license text.
+This repository is intended to be distributed under the **GNU General Public License v3.0 (GPL-3.0)**.
 
-See [`LICENSE`](LICENSE) for the full license terms.
+Refer to [`LICENSE`](LICENSE) for the complete license terms. Ensure that the file contains the official GPL-3.0 license text before distributing the repository under this license.
+
+---
+
+<p align="center">
+  📘 <em>Documenting practical learning, one program at a time.</em>
+</p>
