@@ -1,0 +1,50 @@
+bouncing ball animation 
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/ball"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
+</LinearLayout>
+
+java program :
+
+package com.example.studentbio;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.graphics.drawable.GradientDrawable;
+import android.view.animation.TranslateAnimation;
+
+public class MainActivity extends Activity {
+
+    public void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+
+        View ball = findViewById(R.id.ball);
+
+        GradientDrawable circle = new GradientDrawable();
+        circle.setShape(GradientDrawable.OVAL);
+        circle.setColor(0xFFFF0000);
+        ball.setBackground(circle);
+
+        TranslateAnimation a =
+                new TranslateAnimation(0, 0, 0, 300);
+
+        a.setDuration(500);
+        a.setRepeatCount(-1);
+        a.setRepeatMode(2);
+
+        ball.startAnimation(a);
+    }
+}
+

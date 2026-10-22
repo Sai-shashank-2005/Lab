@@ -1,0 +1,98 @@
+arithmetic operations app 
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/n1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First number"
+        android:inputType="numberDecimal|numberSigned" />
+
+    <EditText
+        android:id="@+id/n2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Second number"
+        android:inputType="numberDecimal|numberSigned" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add" />
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subtract" />
+
+    <Button
+        android:id="@+id/mul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Multiply" />
+
+    <Button
+        android:id="@+id/div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Divide" />
+
+    <TextView
+        android:id="@+id/res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textSize="22sp" />
+
+</LinearLayout>
+
+java code :
+
+
+package com.example.studentbio;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.*;
+
+public class MainActivity extends Activity {
+    EditText n1, n2;
+    TextView res;
+
+    public void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+
+        n1 = findViewById(R.id.n1);
+        n2 = findViewById(R.id.n2);
+        res = findViewById(R.id.res);
+
+        findViewById(R.id.add).setOnClickListener(v -> calc('+'));
+        findViewById(R.id.sub).setOnClickListener(v -> calc('-'));
+        findViewById(R.id.mul).setOnClickListener(v -> calc('*'));
+        findViewById(R.id.div).setOnClickListener(v -> calc('/'));
+    }
+
+    void calc(char op) {
+        double a = Double.parseDouble(n1.getText().toString());
+        double b = Double.parseDouble(n2.getText().toString());
+        double r = 0;
+
+        if (op == '+') r = a + b;
+        if (op == '-') r = a - b;
+        if (op == '*') r = a * b;
+        if (op == '/') r = a / b;
+
+        res.setText("Result: " + r);
+    }
+}
+

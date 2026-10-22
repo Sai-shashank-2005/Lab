@@ -1,0 +1,122 @@
+business calculator
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <EditText
+        android:id="@+id/n1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Amount / Cost Price"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/n2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Selling Price / Percentage / Rate"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/n3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Time (for interest)"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/profit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profit" />
+
+    <Button
+        android:id="@+id/loss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loss" />
+
+    <Button
+        android:id="@+id/discount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Discount" />
+
+    <Button
+        android:id="@+id/percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Percentage" />
+
+    <Button
+        android:id="@+id/interest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simple Interest" />
+
+    <TextView
+        android:id="@+id/res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textSize="22sp"
+        android:padding="10dp" />
+
+</LinearLayout>
+
+java program :
+
+package com.example.studentbio;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.*;
+
+public class MainActivity extends Activity {
+
+    EditText n1, n2, n3;
+    TextView res;
+
+    public void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+
+        n1 = findViewById(R.id.n1);
+        n2 = findViewById(R.id.n2);
+        n3 = findViewById(R.id.n3);
+        res = findViewById(R.id.res);
+
+        findViewById(R.id.profit).setOnClickListener(v -> calc(1));
+        findViewById(R.id.loss).setOnClickListener(v -> calc(2));
+        findViewById(R.id.discount).setOnClickListener(v -> calc(3));
+        findViewById(R.id.percentage).setOnClickListener(v -> calc(4));
+        findViewById(R.id.interest).setOnClickListener(v -> calc(5));
+    }
+
+    void calc(int op) {
+        double a = Double.parseDouble(n1.getText().toString());
+        double b = Double.parseDouble(n2.getText().toString());
+        double c = 0, r = 0;
+
+        if (op == 1) r = b - a;
+        if (op == 2) r = a - b;
+        if (op == 3) r = a * b / 100;
+        if (op == 4) r = a * b / 100;
+
+        if (op == 5) {
+            c = Double.parseDouble(n3.getText().toString());
+            r = a * b * c / 100;
+        }
+
+        if (op == 1) res.setText("Profit: " + r);
+        if (op == 2) res.setText("Loss: " + r);
+        if (op == 3) res.setText("Discount: " + r);
+        if (op == 4) res.setText("Percentage: " + r);
+        if (op == 5) res.setText("Simple Interest: " + r);
+    }
+}
+
