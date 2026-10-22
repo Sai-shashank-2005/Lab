@@ -1,102 +1,160 @@
-# 🧪 Academic Lab Portfolio: Security & Web Tech
+# 🧪 Academic Lab Portfolio: Security, Web Technologies & Open Source
 
-[![Language](https://img.shields.io/badge/Language-Java%20%7C%20JavaScript-blue.svg)]()
-[![Domain](https://img.shields.io/badge/Domain-Cryptography%20%7C%20Frontend-orange.svg)]()
-[![Framework](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3-E34F26?logo=html5&logoColor=white)]()
-[![License](https://img.shields.io/badge/License-GNU%20GPLv3-red.svg)]()
+![Language](https://img.shields.io/badge/Language-Java%20%7C%20JavaScript%20%7C%20PHP%20%7C%20Bash-blue.svg)
+![Domain](https://img.shields.io/badge/Domain-Cryptography%20%7C%20Web%20Development%20%7C%20Open%20Source-orange.svg)
+![Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20MySQL-E34F26?logo=html5&logoColor=white)
+![License](https://img.shields.io/badge/License-GPL--3.0-red.svg)
 
-> **Overview**
-> This repository serves as a practical portfolio of academic laboratory implementations. It is divided into two core disciplines: **Network Security**, focusing on applied Java cryptography, and **Web Technologies**, focusing on interactive frontend development and layout structuring.
+## 📖 Overview
 
----
+This repository serves as a practical portfolio of academic laboratory programs covering **Network Security, Web Technologies, Open Source Programming, and Shell Scripting**.
+
+It contains implementations of cryptographic algorithms, interactive frontend applications, server-side PHP programs, database connectivity, and Linux shell utilities. The repository is intended for academic learning, laboratory practice, and practical examination preparation.
 
 ## 🔐 Module 1: Network Security & Cryptography
 
-This module contains Java implementations of foundational cryptographic algorithms and symmetric-key ciphers. It demonstrates the use of the `javax.crypto` library for secure data encryption and decryption.
+This module explores foundational cryptographic algorithms using Java and the `javax.crypto` library.
 
-<table width="100%">
-  <tr>
-    <th width="30%">Algorithm / File</th>
-    <th width="70%">Description & Implementation Details</th>
-  </tr>
-  <tr>
-    <td><strong>AES Encryption</strong><br><code>AESEncryption.java</code></td>
-    <td>Implements the <strong>Advanced Encryption Standard (AES)</strong> using a 128-bit key. Demonstrates secure symmetric encryption, decryption, and Base64 encoding for safe transport.</td>
-  </tr>
-  <tr>
-    <td><strong>Blowfish Cipher</strong><br><code>BlowfishExample.java</code></td>
-    <td>Implementation of the <strong>Blowfish</strong> symmetric block cipher, showcasing an alternative to DES/AES for fast, variable-length key encryption.</td>
-  </tr>
-  <tr>
-    <td><strong>DES Encryption</strong><br><code>DESEncryption.java</code></td>
-    <td>Demonstrates legacy symmetric-key encryption using the <strong>Data Encryption Standard (DES)</strong>. Useful for studying historical block cipher mechanics.</td>
-  </tr>
-  <tr>
-    <td><strong>Caesar Cipher</strong><br><code>Caesar_Cipher.java</code></td>
-    <td>A classic substitution cipher implementation. Uses modular arithmetic to shift alphabetical characters by a user-defined key while preserving non-alphabetical symbols.</td>
-  </tr>
-</table>
-
----
+| Algorithm / File | Description |
+|---|---|
+| **AES Encryption** — `AESEncryption.java` | Demonstrates symmetric encryption and decryption using the Advanced Encryption Standard (AES), with Base64 encoding for ciphertext representation. |
+| **Blowfish Cipher** — `BlowfishExample.java` | Implements the Blowfish symmetric block cipher with a variable-length key. |
+| **DES Encryption** — `DESEncryption.java` | Demonstrates the legacy Data Encryption Standard (DES) for educational study of symmetric-key encryption. |
+| **Caesar Cipher** — `Caesar_Cipher.java` | Implements a substitution cipher using modular arithmetic to shift alphabetic characters by a specified key. |
 
 ## 🌐 Module 2: Web Technologies
 
-This module focuses on interactive browser-based applications, DOM manipulation via JavaScript, and complex HTML table structuring.
+This module focuses on HTML page design, CSS styling, JavaScript logic, DOM interaction, and structured data presentation.
 
-<table width="100%">
-  <tr>
-    <th width="30%">Project / File</th>
-    <th width="70%">Description & Features</th>
-  </tr>
-  <tr>
-    <td><strong>Payroll Calculator</strong><br><code>payroll_system.html</code></td>
-    <td>An interactive JS application that calculates dynamic employee salaries based on organizational roles (MD, HR, TL, TM) and days worked.</td>
-  </tr>
-  <tr>
-    <td><strong>Result Evaluation</strong><br><code>result_system.html</code></td>
-    <td>A student grading dashboard that ingests multiple subject marks, computes totals and averages, and outputs a Pass/Fail classification.</td>
-  </tr>
-  <tr>
-    <td><strong>Number-to-Word</strong><br><code>number_to_word.html</code></td>
-    <td>A JavaScript algorithmic utility that parses numeric inputs (0-999) and converts them into their English word equivalents (e.g., 145 -> "one hundred and forty-five").</td>
-  </tr>
-  <tr>
-    <td><strong>Data Structuring</strong><br><code>colspan.html</code> & <code>rowspan.html</code></td>
-    <td>Advanced HTML structuring demonstrating complex data presentation using row and column spanning (e.g., Demographic Life Expectancy matrices).</td>
-  </tr>
-  <tr>
-    <td><strong>Typography Layout</strong><br><code>newspaper.html</code></td>
-    <td>A visual layout experiment exploring multi-font typography and legacy HTML styling attributes.</td>
-  </tr>
-</table>
+| Project / File | Description |
+|---|---|
+| **Payroll Calculator** — `payroll_system.html` | Calculates employee salaries according to organizational roles and days worked. |
+| **Result Evaluation** — `result_system.html` | Accepts student marks, calculates totals and averages, and determines pass/fail status. |
+| **Number to Words** — `number_to_word.html` | Converts numbers from 0 to 999 into their English word equivalents using JavaScript. |
+| **Column Spanning** — `colspan.html` | Demonstrates HTML tables using the `colspan` attribute to merge columns. |
+| **Row Spanning** — `rowspan.html` | Demonstrates the `rowspan` attribute to merge rows in structured tables. |
+| **Newspaper Layout** — `newspaper.html` | Explores typography, text formatting, and newspaper-style page layouts. |
 
----
+## 🐘 Module 3: Open Source Programming
+
+This module covers server-side web development, database operations, and shell scripting using open-source technologies.
+
+### PHP Programming
+
+| Program | Description |
+|---|---|
+| **Student Mark Evaluation** | Accepts student details and marks through an HTML form, calculates the total and grade, and displays the results in a table using PHP. |
+| **Shopping Cart** | Adds selected products to a shopping cart and demonstrates basic cart management. |
+| **MySQL Data Access** | Connects PHP to a MySQL database and retrieves records from a database table. |
+
+### Shell Scripting
+
+| Program | Description |
+|---|---|
+| **User Session Details** | Displays information about logged-in users and their sessions using Linux commands. |
+| **Shell Utilities** | Demonstrates basic shell programming, command execution, and system information retrieval. |
+
+> **Note:** The PHP, MySQL, and shell program descriptions represent the intended practical exercises. Keep only the entries that correspond to files actually present in the repository, and update filenames as needed.
+
+## 🛠️ Technologies Used
+
+- **Programming Languages:** Java, JavaScript, PHP, Bash
+- **Web Technologies:** HTML5, CSS3
+- **Database:** MySQL
+- **Cryptography:** Java Cryptography Architecture (`javax.crypto`)
+- **Operating System:** Linux
+- **Tools:** JDK, PHP runtime, MySQL server, terminal, and web browser
+- **Version Control:** Git and GitHub
 
 ## 🚀 Execution & Usage
 
-### Running Network Security (Java)
-Ensure you have the Java Development Kit (JDK) installed on your system. Navigate to the `network_security` directory:
+### 1. Network Security — Java
+
+Install a Java Development Kit (JDK), then navigate to the directory containing the Java source files.
 
 ```bash
-# 1. Compile the chosen algorithm
 javac AESEncryption.java
-
-# 2. Execute the compiled class
 java AESEncryption
 ```
 
-### Running Web Technologies
-The web technology files are purely client-side. No local server is required. 
-Simply navigate to the `web_technology` directory and open any `.html` file directly in your preferred web browser (Chrome, Firefox, Edge, etc.).
+Replace `AESEncryption` with the appropriate filename and class name to execute another algorithm.
 
----
+### 2. Web Technologies — HTML, CSS & JavaScript
+
+No server is required for the standalone frontend programs.
+
+1. Navigate to the directory containing the HTML files.
+2. Open the required `.html` file in a browser.
+3. Enter the requested values and test the application's functionality.
+
+### 3. Open Source — PHP
+
+Install PHP and, if required, configure a local web server such as Apache.
+
+Check the PHP installation:
+
+```bash
+php -v
+```
+
+For PHP programs that do not require database or server-specific functionality, start PHP's development server from the project directory:
+
+```bash
+php -S localhost:8000
+```
+
+Open the relevant page at `http://localhost:8000/`.
+
+### 4. PHP & MySQL Integration
+
+For programs that access MySQL:
+
+1. Install and start a MySQL server.
+2. Create the required database and tables.
+3. Configure the database connection in the PHP program.
+4. Start the PHP development server or use Apache.
+5. Open the PHP page in your browser and test the operations.
+
+**Important:** Use appropriate database credentials and avoid committing passwords or other secrets to GitHub.
+
+### 5. Shell Programming
+
+Navigate to the directory containing the shell scripts.
+
+```bash
+chmod +x script.sh
+./script.sh
+```
+
+Alternatively, execute a script directly through Bash:
+
+```bash
+bash script.sh
+```
+
+Replace `script.sh` with the actual shell script filename.
+
+## 📚 Learning Objectives
+
+This repository demonstrates practical understanding of:
+
+- Fundamental cryptographic algorithms and encryption concepts.
+- HTML page structuring, CSS styling, and JavaScript programming.
+- Server-side processing using PHP.
+- Database connectivity and data retrieval using MySQL.
+- Shell scripting and Linux command-line utilities.
+- Git-based version control and open-source collaboration.
 
 ## ⚠️ Academic Disclaimer
 
-> **Note:** The cryptographic implementations provided in this repository are designed strictly for educational and academic purposes. They utilize hardcoded strings and basic generation methods to demonstrate the *concept* of the ciphers. They are **not** intended to be used in production environments for securing real-world sensitive data.
+The programs in this repository are intended for educational purposes and academic laboratory practice.
 
----
+The cryptographic examples demonstrate algorithmic concepts and may use simplified implementations. DES is obsolete for protecting sensitive data, and encryption examples should not be considered production-ready without appropriate modes of operation, secure key management, and other safeguards.
+
+Always test programs in a controlled environment and follow secure coding practices when adapting them for real applications.
 
 ## ⚖️ License
 
-*This repository is distributed under the **[GNU General Public License v3.0](LICENSE)**. Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.*
+This repository is distributed under the **GNU General Public License v3.0 (GPL-3.0)**, provided that the repository's `LICENSE` file contains the corresponding license text.
+
+See [`LICENSE`](LICENSE) for the full license terms.
