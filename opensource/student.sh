@@ -1,43 +1,37 @@
 #!/bin/bash
 
-echo "Enter student name:"
+echo "Enter Student Name:"
 read name
 
-echo "Enter register number:"
-read regno
+echo "Enter Roll Number:"
+read roll
 
-echo "Enter mark 1:"
+echo "Enter 3 Marks:"
 read m1
-
-echo "Enter mark 2:"
 read m2
-
-echo "Enter mark 3:"
 read m3
 
-echo "Enter mark 4:"
-read m4
+total=$((m1+m2+m3))
+avg=$((total/3))
 
-echo "Enter mark 5:"
-read m5
-
-total=$((m1 + m2 + m3 + m4 + m5))
-avg=$((total / 5))
-
-if [ $avg -ge 90 ]; then
-    grade="A+"
-elif [ $avg -ge 75 ]; then
+if [ $avg -ge 90 ]
+then
     grade="A"
-elif [ $avg -ge 60 ]; then
+elif [ $avg -ge 75 ]
+then
     grade="B"
-elif [ $avg -ge 50 ]; then
+elif [ $avg -ge 50 ]
+then
     grade="C"
 else
-    grade="F"
+    grade="Fail"
 fi
 
-echo "Student Name: $name"
-echo "Register Number: $regno"
-echo "Total Marks: $total"
-echo "Average: $avg"
+echo "STUDENT DETAILS"
+echo "Name: $name"
+echo "Roll No: $roll"
+echo "Mark 1: $m1"
+echo "Mark 2: $m2"
+echo "Mark 3: $m3"
+echo "Total: $total"
 echo "Grade: $grade"
