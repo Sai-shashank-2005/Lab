@@ -1,0 +1,167 @@
+mysql student bio data 
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STUDENT BIO-DATA"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"/>
+
+        <EditText
+            android:id="@+id/roll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Roll Number"/>
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Phone Number"
+            android:inputType="phone"/>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SAVE"/>
+
+        <Button
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW DATA"/>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DELETE ALL"/>
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
+
+java program :
+
+
+package com.example.studentbio;
+
+import android.os.Bundle;
+import android.widget.*;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText name, roll, phone;
+    TextView result;
+    SQLiteDatabase db;
+
+    @Override
+    protected void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+
+        name = findViewById(R.id.name);
+        roll = findViewById(R.id.roll);
+        phone = findViewById(R.id.phone);
+        result = findViewById(R.id.result);
+
+        db = openOrCreateDatabase("StudentDB",
+                MODE_PRIVATE, null);
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS student(" +
+                "name TEXT, roll TEXT, phone TEXT)");
+
+        // SAVE DATA
+        findViewById(R.id.save).setOnClickListener(v -> {
+
+            String n = name.getText().toString();
+            String r = roll.getText().toString();
+            String p = phone.getText().toString();
+
+            if (n.isEmpty() || r.isEmpty() || p.isEmpty()) {
+                Toast.makeText(this, "Enter all details",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            db.execSQL("INSERT INTO student VALUES(?,?,?)",
+                    new Object[]{n, r, p});
+
+            Toast.makeText(this, "Data Saved",
+                    Toast.LENGTH_SHORT).show();
+
+            name.setText("");
+            roll.setText("");
+            phone.setText("");
+        });
+
+        // VIEW DATA
+        findViewById(R.id.view).setOnClickListener(v -> {
+
+            Cursor c = db.rawQuery(
+                    "SELECT * FROM student", null);
+
+            StringBuilder data = new StringBuilder();
+
+            while (c.moveToNext()) {
+                data.append("Name: ").append(c.getString(0))
+                        .append("\nRoll: ").append(c.getString(1))
+                        .append("\nPhone: ").append(c.getString(2))
+                        .append("\n\n");
+            }
+
+            result.setText(data.length() == 0
+                    ? "No Data Found" : data.toString());
+
+            c.close();
+        });
+
+        // DELETE DATA
+        findViewById(R.id.delete).setOnClickListener(v -> {
+
+            db.execSQL("DELETE FROM student");
+
+            result.setText("All Data Deleted");
+
+            Toast.makeText(this, "Deleted",
+                    Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        db.close();
+        super.onDestroy();
+    }
+}
+
