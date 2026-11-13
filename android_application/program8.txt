@@ -1,0 +1,90 @@
+media player 
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLAY"/>
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAUSE"/>
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"/>
+
+</LinearLayout>
+
+java program : 
+
+
+package com.example.studentbio;
+
+import android.os.Bundle;
+import android.media.MediaPlayer;
+import android.provider.Settings;
+import android.widget.Button;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    MediaPlayer mp;
+
+    @Override
+    protected void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+
+        Button play = findViewById(R.id.play);
+        Button pause = findViewById(R.id.pause);
+        Button stop = findViewById(R.id.stop);
+
+        mp = MediaPlayer.create(this,
+                Settings.System.DEFAULT_NOTIFICATION_URI);
+
+        // PLAY
+        play.setOnClickListener(v -> {
+            if (mp != null && !mp.isPlaying())
+                mp.start();
+        });
+
+        // PAUSE
+        pause.setOnClickListener(v -> {
+            if (mp != null && mp.isPlaying())
+                mp.pause();
+        });
+
+        // STOP
+        stop.setOnClickListener(v -> {
+            if (mp != null) {
+                mp.release();
+                mp = MediaPlayer.create(this,
+                        Settings.System.DEFAULT_NOTIFICATION_URI);
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mp != null) {
+            mp.release();
+            mp = null;
+        }
+        super.onDestroy();
+    }
+}
+
