@@ -37,7 +37,6 @@ import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.provider.Settings;
 import android.widget.Button;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,42 +48,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(b);
         setContentView(R.layout.activity_main);
 
+        mp = MediaPlayer.create(this,
+                Settings.System.DEFAULT_NOTIFICATION_URI);
+
         Button play = findViewById(R.id.play);
         Button pause = findViewById(R.id.pause);
         Button stop = findViewById(R.id.stop);
 
-        mp = MediaPlayer.create(this,
-                Settings.System.DEFAULT_NOTIFICATION_URI);
-
-        // PLAY
         play.setOnClickListener(v -> {
-            if (mp != null && !mp.isPlaying())
+            if (!mp.isPlaying())
                 mp.start();
         });
 
-        // PAUSE
         pause.setOnClickListener(v -> {
-            if (mp != null && mp.isPlaying())
+            if (mp.isPlaying())
                 mp.pause();
         });
 
-        // STOP
         stop.setOnClickListener(v -> {
-            if (mp != null) {
-                mp.release();
-                mp = MediaPlayer.create(this,
-                        Settings.System.DEFAULT_NOTIFICATION_URI);
-            }
+            mp.stop();
+            mp.release();
+            mp = MediaPlayer.create(this,
+                    Settings.System.DEFAULT_NOTIFICATION_URI);
         });
     }
 
     @Override
     protected void onDestroy() {
-        if (mp != null) {
-            mp.release();
-            mp = null;
-        }
+        mp.release();
         super.onDestroy();
     }
 }
-
